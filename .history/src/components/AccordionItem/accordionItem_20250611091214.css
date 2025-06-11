@@ -1,0 +1,8 @@
+.accordionItem {
+    width: 100%;
+}
+
+.accordionItem .header {
+    width: 100%;
+    height: 48px;
+}

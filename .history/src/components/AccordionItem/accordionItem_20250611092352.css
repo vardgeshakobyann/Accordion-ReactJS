@@ -1,0 +1,34 @@
+.accordionItem {
+    width: 100%;
+}
+
+.accordionItem .header {
+    width: 100%;
+    height: 48px;
+    background: #F8F8F8;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordionItem .header .leftBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 10px;
+}
+
+.accordionItem .header .leftBlock p {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.accordionItem .header .leftBlock::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 30px;
+    background: #000;
+}

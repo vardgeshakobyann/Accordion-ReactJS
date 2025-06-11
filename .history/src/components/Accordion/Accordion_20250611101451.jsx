@@ -1,0 +1,42 @@
+import './accordion.css';
+import { data } from '../../DB';
+import AccordionItem from '../AccordionItem/AccordionItem';
+import { useState } from 'react';
+
+const Accordion = () => {
+    const [accordionData, setAccordionData] = useState(data);
+    console.log(accordionData);
+    
+    const showItem = (index) => {
+        const update = accordionData.map((elm, idx) => {
+            return {...elm, isComplited: idx === index};
+        })
+
+        setAccordionData(update);
+
+        if (accordionData[index].isComplited) {
+            accordionData[index].isComplited = false;
+            setAccordionData([...accordionData]);
+        }
+    }
+
+    return (
+        <div className="accordion">
+            {
+                accordionData.map((el, index) => {
+                    return (
+                        <AccordionItem 
+                            key={el.id}
+                            question={el.question}
+                            answer={el.answer}
+                            el={el}
+                            showItem={() => showItem(index)}
+                        />
+                    )
+                })
+            }
+        </div>
+    )
+}
+
+export default Accordion;
